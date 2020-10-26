@@ -48,7 +48,7 @@ class RBTree
     {
         return header.right == nullNode;
     }
-    /* Сдесь дерево делается логически пустым */
+    /* Здесь дерево делается логически пустым */
     public void makeEmpty()
     {
         header.right = nullNode;
@@ -87,14 +87,13 @@ class RBTree
 
         if (parent.color == RED)
         {
-            // Have to rotate
             grand.color = RED;
             if (item < grand.element != item < parent.element)
                 parent = rotate( item, grand );
             current = rotate(item, great );
             current.color = BLACK;
         }
-        // Сдесь делается главный элемент черным
+        // Здесь делается главный элемент черным
         header.right.color = BLACK;
     }
     private RedBlackNode rotate(int item, RedBlackNode parent)
